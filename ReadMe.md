@@ -1,13 +1,13 @@
 # Scam Detection Task
 
-We’ve got an interesting issue for you to think about. We sometimes have been people who try to sign up multiple times using a discount. We want to be able to subtly detect and block these people. 
-The way we’d like to detect them is by checking to see if they match any two of the following three attributes of a pre-existing customer:
+Weâ€™ve got an interesting issue for you to think about. We sometimes have been people who try to sign up multiple times using a discount. We want to be able to subtly detect and block these people. 
+The way weâ€™d like to detect them is by checking to see if they match any two of the following three attributes of a pre-existing customer:
 Last Name
 Postcode
 
 Credit Card By checking the last four digits, and the card expiry, and matching both of them)
 We would also like you to write a test file to test all the scenarios. The various models (users, addresses & credit cards) should be stored in a database and you should aim to optimize the SQL for efficiency. Feel free to use an ORM like ActiveRecord.
-The following code snippets are ruby versions of how the class should be laid out, but they should be easily translatable into another language like Python or Javascript You are free to use whatever language you are most comfortable with here) and any ORM Again, feel free to use whatever you are most comfortable with). So we’d like you to create a FraudDetector class whose skeleton is the following:
+The following code snippets are ruby versions of how the class should be laid out, but they should be easily translatable into another language like Python or Javascript You are free to use whatever language you are most comfortable with here) and any ORM Again, feel free to use whatever you are most comfortable with). So weâ€™d like you to create a FraudDetector class whose skeleton is the following:
 
 class FraudDetector  attr_reader :last_name, :postcode, :card_number, :card_expiry 
  
@@ -43,12 +43,12 @@ A postcode could include spaces, you should be able to match postcodes even if t
 
 The last name might be lower case, or upper case.
 
-The card_expiry will be the format “06/18” , or “06/2018” , “6/18” or “6/2018”
+The card_expiry will be the format â€œ06/18â€ , or â€œ06/2018â€ , â€œ6/18â€ or â€œ6/2018â€
 
 Think deeply about all of the possible test cases here.
 
 Feel free to build it out as a rails task so you have access to ActiveRecord/RSpec out of the box etc
-We’re keen to ensure that it’s a collaborative effort; feel free to check in regularly to discuss any aspect of the project.
+Weâ€™re keen to ensure that itâ€™s a collaborative effort; feel free to check in regularly to discuss any aspect of the project.
 
 =====================================================
 
@@ -64,34 +64,55 @@ ubuntu@DESKTOP-D7QB2EH:/mnt/c/Users/user/Desktop/JO/My Clients/ButterNutBox/scam
 =================================
 
 ubuntu@DESKTOP-D7QB2EH:/mnt/c/Users/user/Desktop/JO/My Clients/ButterNutBox/scam$ cat hello.html
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<html lang="en">
   <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="PSPad editor, www.pspad.com">
-  <title>TransScript - Test</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="__javascript__/hello.js"></script>
   </head>
-  <body>
-  <script type="module">import * as hello from './__target__/hello.js'; window.hello = hello;</script>
-    <h2>Hello demo</h2>
+  <title>Insert Text</title>
+<body onload=hello.greet()>
 
+<h2>
+<p id="top">...</p>
+</h2>
+
+<p>
+<div id = "groet">...</div>
+</p>
+<p>Your Name: <input name="name" type="text" maxlength="80" id="Name" value=""/> [Please enter your name]<br><br>
+<button onclick=hello.greet()>Refresh the greeting!</button>
+</p>
+
+<script type="module">import * as hello from './__target__/hello.js'; window.hello = hello;</script>
+    <h2>Hello demo</h2>
+    
     <p>
     <div id = "greet">...</div>
-    <button onclick="hello.solarSystem.greet ()">Click me repeatedly!</button>
-
+    <button onclick="hello.greet2()">Click me repeatedly!</button>
+    
     <p>
     <div id = "explain">...</div>
-    <button onclick="hello.solarSystem.explain ()">And click me repeatedly too!</button>
-  </body>
+    <button onclick="hello.explain()">And click me repeatedly too!</button>
+    </body>
 </html>
 ubuntu@DESKTOP-D7QB2EH:/mnt/c/Users/user/Desktop/JO/My Clients/ButterNutBox/scam$
 
 =================================
 
 ubuntu@DESKTOP-D7QB2EH:/mnt/c/Users/user/Desktop/JO/My Clients/ButterNutBox/scam$ cat hello.py
-    from itertools import chain
-
-    class SolarSystem:
+def greet():
+    name = document.getElementById("Name").value
+    if name == "" or name.length == 0 or name == null:
+        document.getElementById("groet").innerHTML = '<p><font color="#ff0000">Hello Anonymous, may I know yor name? Please insert it below:</font></p>'
+        document.getElementById("top").innerHTML = '<font color="#ffffff">Demo</font>'
+    else:
+        document.getElementById("groet").innerHTML = '<p><font color="#00ff00">Hello, '+name+', thank you for introducing you</font></p>'
+        document.getElementById("top").innerHTML = '<font color="#00ff00">Hello, '+name+'</font>'
+        
+from itertools import chain
+    
+def SolarSystem():
         planets = [list (chain (planet, (index + 1,))) for index, planet in enumerate ((
             ('Mercury', 'hot', 2240),
             ('Venus', 'sulphurous', 6052),
@@ -100,30 +121,30 @@ ubuntu@DESKTOP-D7QB2EH:/mnt/c/Users/user/Desktop/JO/My Clients/ButterNutBox/scam
             ('Jupiter', 'stormy', 71492),
             ('Saturn', 'ringed', 60268),
             ('Uranus', 'cold', 25559),
-            ('Neptune', 'very cold', 24766)
+            ('Neptune', 'very cold', 24766) 
         ))]
-
+        
         lines = (
             '{} is a {} planet',
             'The radius of {} is {} km',
             '{} is planet nr. {} counting from the sun'
         )
-
+        
         def __init__ (self):
             self.lineIndex = 0
-
-        def greet (self):
+        
+        def greet2 (self):
             self.planet = self.planets [int (Math.random () * len (self.planets))]
             document.getElementById ('greet') .innerHTML = 'Hello {}'.format (self.planet [0])
             self.explain ()
-
+            
         def explain (self):
             document.getElementById ('explain').innerHTML = (
                 self.lines [self.lineIndex] .format (self.planet [0], self.planet [self.lineIndex + 1])
             )
             self.lineIndex = (self.lineIndex + 1) % 3
-
-    solarSystem = SolarSystem ()
+            
+#    solarSystem = SolarSystem ()
 ubuntu@DESKTOP-D7QB2EH:/mnt/c/Users/user/Desktop/JO/My Clients/ButterNutBox/scam$
 ubuntu@DESKTOP-D7QB2EH:/mnt/c/Users/user/Desktop/JO/My Clients/ButterNutBox/scam$
 
@@ -190,12 +211,12 @@ ubuntu@DESKTOP-D7QB2EH:/mnt/c/Users/user/Desktop/JO/My Clients/ButterNutBox/scam
 Collecting transcrypt
 Collecting mypy (from transcrypt)
   Downloading https://files.pythonhosted.org/packages/73/4f/ed4fbcee5899b1cefe39ebb191a8fdc0c5a03b68930d3f929449b7d2101a/mypy-0.720-cp37-cp37m-manylinux1_x86_64.whl (20.7MB)
-    100% |¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦| 20.7MB 35kB/s
+    100% |Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦| 20.7MB 35kB/s
 Collecting mypy-extensions<0.5.0,>=0.4.0 (from mypy->transcrypt)
   Using cached https://files.pythonhosted.org/packages/4d/72/8d54e2b296631b9b14961d583e56e90d9d7fba8a240d5ce7f1113cc5e887/mypy_extensions-0.4.1-py2.py3-none-any.whl
 Collecting typed-ast<1.5.0,>=1.4.0 (from mypy->transcrypt)
   Downloading https://files.pythonhosted.org/packages/fb/56/dd4e168a0009da85c78c6cfe91f5b2df2c7bbed60f3ba778c4a71289e6fb/typed_ast-1.4.0-cp37-cp37m-manylinux1_x86_64.whl (736kB)
-    100% |¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦| 737kB 707kB/s
+    100% |Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦Â¦| 737kB 707kB/s
 Collecting typing-extensions>=3.7.4 (from mypy->transcrypt)
   Using cached https://files.pythonhosted.org/packages/27/aa/bd1442cfb0224da1b671ab334d3b0a4302e4161ea916e28904ff9618d471/typing_extensions-3.7.4-py3-none-any.whl
 Installing collected packages: mypy-extensions, typed-ast, typing-extensions, mypy, transcrypt
