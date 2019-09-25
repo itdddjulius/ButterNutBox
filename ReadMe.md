@@ -63,88 +63,10 @@ ubuntu@DESKTOP-D7QB2EH:/mnt/c/Users/user/Desktop/JO/My Clients/ButterNutBox/scam
 
 =================================
 
-ubuntu@DESKTOP-D7QB2EH:/mnt/c/Users/user/Desktop/JO/My Clients/ButterNutBox/scam$ cat hello.html
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<script src="__javascript__/hello.js"></script>
-  </head>
-  <title>Insert Text</title>
-<body onload=hello.greet()>
-
-<h2>
-<p id="top">...</p>
-</h2>
-
-<p>
-<div id = "groet">...</div>
-</p>
-<p>Your Name: <input name="name" type="text" maxlength="80" id="Name" value=""/> [Please enter your name]<br><br>
-<button onclick=hello.greet()>Refresh the greeting!</button>
-</p>
-
-<script type="module">import * as hello from './__target__/hello.js'; window.hello = hello;</script>
-    <h2>Hello demo</h2>
-    
-    <p>
-    <div id = "greet">...</div>
-    <button onclick="hello.greet2()">Click me repeatedly!</button>
-    
-    <p>
-    <div id = "explain">...</div>
-    <button onclick="hello.explain()">And click me repeatedly too!</button>
-    </body>
-</html>
 ubuntu@DESKTOP-D7QB2EH:/mnt/c/Users/user/Desktop/JO/My Clients/ButterNutBox/scam$
 
 =================================
 
-ubuntu@DESKTOP-D7QB2EH:/mnt/c/Users/user/Desktop/JO/My Clients/ButterNutBox/scam$ cat hello.py
-def greet():
-    name = document.getElementById("Name").value
-    if name == "" or name.length == 0 or name == null:
-        document.getElementById("groet").innerHTML = '<p><font color="#ff0000">Hello Anonymous, may I know yor name? Please insert it below:</font></p>'
-        document.getElementById("top").innerHTML = '<font color="#ffffff">Demo</font>'
-    else:
-        document.getElementById("groet").innerHTML = '<p><font color="#00ff00">Hello, '+name+', thank you for introducing you</font></p>'
-        document.getElementById("top").innerHTML = '<font color="#00ff00">Hello, '+name+'</font>'
-        
-from itertools import chain
-    
-def SolarSystem():
-        planets = [list (chain (planet, (index + 1,))) for index, planet in enumerate ((
-            ('Mercury', 'hot', 2240),
-            ('Venus', 'sulphurous', 6052),
-            ('Earth', 'fertile', 6378),
-            ('Mars', 'reddish', 3397),
-            ('Jupiter', 'stormy', 71492),
-            ('Saturn', 'ringed', 60268),
-            ('Uranus', 'cold', 25559),
-            ('Neptune', 'very cold', 24766) 
-        ))]
-        
-        lines = (
-            '{} is a {} planet',
-            'The radius of {} is {} km',
-            '{} is planet nr. {} counting from the sun'
-        )
-        
-        def __init__ (self):
-            self.lineIndex = 0
-        
-        def greet2 (self):
-            self.planet = self.planets [int (Math.random () * len (self.planets))]
-            document.getElementById ('greet') .innerHTML = 'Hello {}'.format (self.planet [0])
-            self.explain ()
-            
-        def explain (self):
-            document.getElementById ('explain').innerHTML = (
-                self.lines [self.lineIndex] .format (self.planet [0], self.planet [self.lineIndex + 1])
-            )
-            self.lineIndex = (self.lineIndex + 1) % 3
-            
-#    solarSystem = SolarSystem ()
 ubuntu@DESKTOP-D7QB2EH:/mnt/c/Users/user/Desktop/JO/My Clients/ButterNutBox/scam$
 ubuntu@DESKTOP-D7QB2EH:/mnt/c/Users/user/Desktop/JO/My Clients/ButterNutBox/scam$
 
